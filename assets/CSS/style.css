@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50em;
+    box-shadow: 10px 10px 8px #888888;
+}
+
+.Logo {
+    display: flex;
+    gap: 3em;
+    justify-content: center;
+    align-items: center;
+}
+
+.Logo img {
+    width: 140px;
+    height: 140px;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 1em;
+}
+
+.header-buttons button {
+    width: 8em;
+    height: 2.5em;
+    border-radius: 20px;
+    border: none;
+    font-size: 17px;
+}
+
+#assign {
+    color: green;
+}
+
+#rénitialiser {
+    color: red;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+    height: 100vh;
+    margin: 2em;
+    position: relative;
+}
+
+.aside-bar,
+.staff-rooms {
+    background-color: white;
+    box-shadow: 5px 10px 18px #888888;
+    border-radius: 20px;
+}
+
+.staff-rooms {
+    grid-column: 2/5;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    height: 10em;
+}
+
+.bartop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 5px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.bartop button {
+    width: 6em;
+    height: 3em;
+    border: none;
+    border-radius: 15px;
+    background-color: green;
+    color: white;
+    font-size: 15px;
+}
+
+.searchbox {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 100%;
+    margin: 0;
+}
+
+.searchbox #searchBar {
+    border-radius: 10px;
+    border-color: gray;
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.staff-rooms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.roomsButton {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.room {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    align-items: center;
+    width: 20em;
+    height: 20em;
+    margin: 1em;
+    border-radius: 15px;
+    padding: 1em;
+    color: white;
+}
+
+#receptionRoom {
+    background-image: url(/assets/IMAGES/salle-de-récéption\ \(1\).jpg);
+    background-size: cover;
+}
+
+#securityRoom {
+    background-image: url(/assets/IMAGES/salle-de-sécurité.jpg);
+    background-size: cover;
+}
+
+#personnelsRoom {
+    background-image: url(/assets/IMAGES/salle-des-personnel.jpg);
+    background-size: cover;
+}
+
+#conferenceRoom {
+    background-image: url(/assets/IMAGES/salle-de-conference.jpg);
+    background-size: cover;
+}
+
+#archiveRoom {
+    background-image: url(/assets/IMAGES/archive.jpg);
+    background-size: cover;
+}
+
+#serversRoom {
+    background-image: url(/assets/IMAGES/salle-des-serveurs.jpg);
+    background-size: cover;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    gap: 5em;
+    font-size: 18px;
+}
+
+.top p {
+    opacity: 0.8;
+}
+
+.top button {
+    width: 3em;
+    height: 3em;
+    border: none
+}
+
+#ajouteForm {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+    height: 100vh;
+    border-radius: 10px;
+    margin-left: 22em;
+    padding: 10px;
+    z-index: 1;
+    top: 10em;
+    background-color: white;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+#ajouteForm label {
+    font-size: 14px;
+}
+
+#ajouteForm input {
+    width: 80%;
+    border: none;
+    border-bottom: #888888 1px solid;
+    padding: 10px;
+}
+
+#roles {
+    width: 80%;
+    height: 40px;
+    padding: 8px 12px;
+    border: none;
+    border-bottom: #888888 1px solid;
+    opacity: 0.7;
+    background-color: white;
+    cursor: pointer;
+}
+
+.employe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4em;
+    margin: 1em;
+    padding: 1em;
+    border: 0.5px solid;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.employe span img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.employe .editBtn {
+    border: none;
+    background-color: transparent;
+}
+
+.experience-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.expBtn {
+    width: 30%;
+    height: 2.5em;
+    background-color: green;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 10px;
+}
+
+.experience-items {
+    width: 100%;
+    max-height: 100px;
+    overflow-y: auto;
+    border: 1px solid #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.experience {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.experience input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.experience-items::-webkit-scrollbar {
+    width: 5px;
+}
+
+.experience-items::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+.experience-items::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.formBtns {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    width: 90%;
+    height: 4em;
+    gap: 1em;
+}
+
+#ajouterEmp,
+#annuler {
+    height: 50%;
+    width: 6em;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+#annuler {
+    background-color: red;
+}
+
+#ajouterEmp {
+    background-color: green;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
+}
+
+.available-employee {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.available-employee img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.assign-btn {
+    padding: 8px 16px;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.zone-employees {
+    position: absolute;
+    left: 0;
+    top: 7em;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    height: 200px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+.zone-employees .employe {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 12px;
+    height: auto;
+    width: 90%;
+    height: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.zone-employees .employe h3 {
+    font-size: 14px;
+}
+
+.zone-employees .employe p {
+    font-size: 12px;
+}
+
+.zone-employees .employe img {
+    width: 40px;
+    height: 40px;
+}
+
+.remove-from-zone-btn {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    width: 2px;
+    height: 2px;
+    border-radius: 20px;
+    padding: 5px 8px;
+    cursor: pointer;
+    margin-left: 5px;
+}

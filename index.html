@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worksphere</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <div class="Logo">
+                <img src="assets/IMAGES/WORKSPHERE.png" alt="logo">
+                <span>
+                    <h1>Worksphere</h1>
+                    <h5>Système de gestion spatiale</h5>
+                </span>
+            </div>
+            <div class="header-buttons">
+                <button id="assign">Auto-Assigner</button>
+                <button id="rénitialiser">Rénitialiser</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="aside-bar">
+            <div class="head">
+                <div class="bartop">
+                    <h4>Personnel non assigné</h4>
+                    <button id="ajoutBtn"><i class="fa fa-plus"></i>  Ajouter</button>
+                </div>
+                <div class="searchbox">
+                    <input type="search" id="searchBar" name="searchBar" placeholder="Chercher...">
+                </div>
+            </div>
+            <div class="employees">
+                <!-- les employes seront chargées dynamiquement ici -->
+            </div>
+        </div>
+        <div class="staff-rooms">
+            <div class="room" id="receptionRoom">
+                <div class="top">
+                    <div>
+                        <h4>Salle de réception</h4>
+                    </div>
+                    <div>
+                        <button class="roomsButton" data-status="receptionRoom" data-capacity="1"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="room" id="securityRoom">
+                <div class="top">
+                    <div>
+                        <h4>Salle de sécurité</h4>
+                    </div>
+                    <div>
+                        <button class="roomsButton" data-status="securityRoom" data-capacity="4"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="room" id="personnelsRoom">
+                <div class="top">
+                    <div>
+                        <h4>Salle de personnels</h4>
+                    </div>
+                    <div>
+                        <button class="roomsButton" data-status="personnelsRoom" data-capacity="5"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="room" id="conferenceRoom">
+                <div class="top">
+                    <div>
+                        <h4>Salle de conférence</h4>
+                    </div>
+                    <div>
+                        <button class="roomsButton" data-status="conferenceRoom" data-capacity="10"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="room" id="archiveRoom">
+                <div class="top">
+                    <div>
+                        <h4>Archive</h4>
+                    </div>
+                    <div>
+                        <button class="roomsButton" data-status="archiveRoom" data-capacity="2"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="room" id="serversRoom">
+                <div class="top">
+                    <div>
+                        <h4>Salle de serveurs</h4>
+                    </div>
+                    <div>
+                        <button class="roomsButton" data-status="serversRoom" data-capacity="5"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>      
+            </div>
+        </div>
+    </main>
+    <form id="ajouteForm">
+        <label for="name">Nom complet*</label>
+        <input type="text" id="name" placeholder="ex: Jean Dubois" required>
+    
+        <label for="roles">Role*</label>
+        <select name="roles" id="roles" required>
+            <option value="Réceptionniste">Réceptionniste</option>
+            <option value="Technicien IT">Technicien IT</option>
+            <option value="Agent de sécurité">Agent de sécurité</option>
+            <option value="Manager">Manager</option>
+            <option value="Nettoyage">Nettoyage</option>
+            <option value="Autres roles">Autres roles</option>
+        </select>
+        <label for="profileUrl">Url de la photo*</label>
+        <input type="url" id="profileUrl" placeholder="ex: https://exemple.com/photo.jpg" required>
+    
+        <label for="email">Email*</label>
+        <input type="email" id="email" placeholder="ex: jean.dubois@exemple.com" required>
+    
+        <label for="phone">Téléphone*</label>
+        <input type="tel" id="phone" placeholder="ex: +212 678-124520" required>
+
+        <div class="experience-details">
+            <label for="experience">Expériences Professionnelles</label>
+            <button type="button" class="expBtn">Ajouter une Experience</button>
+        </div>
+        <div class="experience-items">
+                <!-- les expériences seront chargées dynamiquement. -->     
+        </div>
+        <div class="formBtns">
+            <button type="button" id="annuler">Annuler</button>
+            <button type="submit" id="ajouterEmp">Ajouter</button>
+        </div>
+    </form>
+    <script src="assets/JS/script.js"></script>
+</body>
+</html>
