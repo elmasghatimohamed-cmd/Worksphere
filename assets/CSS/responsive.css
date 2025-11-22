@@ -1,0 +1,319 @@
+@media screen and (max-width: 1280px) {
+    .navigation {
+        gap: 10em;
+        padding: 1em;
+    }
+
+    .Logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        margin: 1em;
+    }
+
+    .aside-bar {
+        grid-column: 1;
+        margin-bottom: 2em;
+    }
+
+    .staff-rooms {
+        grid-column: 1;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .room {
+        width: 90%;
+        height: 18em;
+    }
+
+    #ajouteForm {
+        width: 50%;
+        margin-left: 10em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        gap: 2em;
+        padding: 1em;
+    }
+
+    .Logo {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .Logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header-buttons button {
+        width: 100%;
+    }
+
+    .container {
+        height: auto;
+        margin: 1em;
+    }
+
+    .staff-rooms {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .room {
+        width: 90%;
+        height: 16em;
+        gap: 3em;
+    }
+
+    .top {
+        gap: 2em;
+        font-size: 16px;
+    }
+
+    #ajouteForm {
+        width: 80%;
+        margin-left: 2em;
+        top: 5em;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .zone-employees {
+        height: 150px;
+    }
+
+    .bartop {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .bartop button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navigation {
+        gap: 1em;
+        padding: 0.5em;
+    }
+
+    .Logo {
+        gap: 0.5em;
+    }
+
+    .Logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .Logo h1 {
+        font-size: 1.2em;
+    }
+
+    .header-buttons button {
+        font-size: 14px;
+        height: 2em;
+    }
+
+    .container {
+        margin: 0.5em;
+        gap: 1em;
+    }
+
+    .aside-bar,
+    .staff-rooms {
+        border-radius: 10px;
+    }
+
+    .head {
+        height: auto;
+        gap: 1em;
+    }
+
+    .bartop {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .bartop button {
+        height: 2.5em;
+        font-size: 13px;
+    }
+
+    .searchbox {
+        height: 35px;
+    }
+
+    .searchbox #searchBar {
+        width: 95%;
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .room {
+        height: 14em;
+        gap: 2em;
+        margin: 0.5em;
+        padding: 0.5em;
+    }
+
+    .top {
+        gap: 1em;
+        font-size: 14px;
+    }
+
+    .top button {
+        width: 2.5em;
+        height: 2.5em;
+    }
+
+    .employe {
+        flex-direction: column;
+        height: auto;
+        gap: 0.5em;
+        padding: 0.8em;
+        font-size: 12px;
+    }
+
+    .employe span img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .experience-details {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .expBtn {
+        width: 100%;
+    }
+
+    #ajouteForm {
+        width: 90%;
+        margin-left: 1em;
+        padding: 5px;
+        top: 3em;
+    }
+
+    #ajouteForm label {
+        font-size: 12px;
+    }
+
+    #ajouteForm input,
+    #roles {
+        width: 90%;
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .formBtns {
+        width: 100%;
+        justify-content: center;
+        gap: 0.5em;
+    }
+
+    #ajouterEmp,
+    #annuler {
+        width: 5em;
+        font-size: 12px;
+    }
+
+    .modal-content {
+        padding: 10px;
+        max-height: 90vh;
+    }
+
+    .available-employee {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .available-employee img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .assign-btn {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .zone-employees {
+        top: 6em;
+        height: 120px;
+    }
+
+    .zone-employees .employe {
+        font-size: 10px;
+        height: 80px;
+        width: 95%;
+        padding: 5px;
+    }
+
+    .zone-employees .employe h3 {
+        font-size: 12px;
+    }
+
+    .zone-employees .employe p {
+        font-size: 10px;
+    }
+
+    .zone-employees .employe img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .remove-from-zone-btn {
+        padding: 3px 6px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .Logo h1 {
+        font-size: 1em;
+    }
+
+    .header-buttons button {
+        font-size: 12px;
+    }
+
+    .room {
+        height: 12em;
+        gap: 1.5em;
+    }
+
+    .top {
+        font-size: 12px;
+    }
+
+    .employe {
+        font-size: 11px;
+    }
+
+    #ajouteForm {
+        width: 95%;
+        margin-left: 0.5em;
+    }
+}
