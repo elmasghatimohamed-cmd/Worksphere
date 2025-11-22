@@ -140,32 +140,32 @@
 }
 
 #receptionRoom {
-    background-image: url(/assets/IMAGES/salle-de-récéption\ \(1\).jpg);
+    background-image: url(./assets/IMAGES/salle-de-récéption\ \(1\).jpg);
     background-size: cover;
 }
 
 #securityRoom {
-    background-image: url(/assets/IMAGES/salle-de-sécurité.jpg);
+    background-image: url(./assets/IMAGES/salle-de-sécurité.jpg);
     background-size: cover;
 }
 
 #personnelsRoom {
-    background-image: url(/assets/IMAGES/salle-des-personnel.jpg);
+    background-image: url(./assets/IMAGES/salle-des-personnel.jpg);
     background-size: cover;
 }
 
 #conferenceRoom {
-    background-image: url(/assets/IMAGES/salle-de-conference.jpg);
+    background-image: url(./assets/IMAGES/salle-de-conference.jpg);
     background-size: cover;
 }
 
 #archiveRoom {
-    background-image: url(/assets/IMAGES/archive.jpg);
+    background-image: url(./assets/IMAGES/archive.jpg);
     background-size: cover;
 }
 
 #serversRoom {
-    background-image: url(/assets/IMAGES/salle-des-serveurs.jpg);
+    background-image: url(./assets/IMAGES/salle-des-serveurs.jpg);
     background-size: cover;
 }
 
