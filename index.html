@@ -18,10 +18,6 @@
                     <h5>Système de gestion spatiale</h5>
                 </span>
             </div>
-            <div class="header-buttons">
-                <button id="assign">Auto-Assigner</button>
-                <button id="rénitialiser">Rénitialiser</button>
-            </div>
         </nav>
     </header>
 
@@ -118,6 +114,9 @@
         </select>
         <label for="profileUrl">Url de la photo*</label>
         <input type="url" id="profileUrl" placeholder="ex: https://exemple.com/photo.jpg" required>
+        <div id="photoPreviewContainer">
+            <img id="photoPreview" src="https://randomuser.me/api/portraits/men/0.jpg" alt="" />
+        </div>
     
         <label for="email">Email*</label>
         <input type="email" id="email" placeholder="ex: jean.dubois@exemple.com" required>

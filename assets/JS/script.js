@@ -13,6 +13,9 @@ const role = document.getElementById('roles');
 const profileUrl = document.getElementById('profileUrl');
 const email = document.getElementById('email');
 const phone = document.getElementById('phone');
+const photoPreview = document.getElementById('photoPreview');
+const photoPreviewContainer = document.getElementById('photoPreviewContainer');
+const randomUserBtn = document.getElementById('randomUserBtn');
 
 const nameRegex = /^[a-zA-ZÀ-ÿ\s]{2,50}$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -27,6 +30,10 @@ function resetAjouteForm() {
     experienceItems.innerHTML = '';
     ajouteForm.removeAttribute('data-edit-id');
     ajouterEmp.textContent = 'Ajouter';
+    // reset preview to placeholder (if present)
+    if (photoPreview) {
+        photoPreview.src = '';
+    }
 }
 
 function saveEmployeesToStorage() {
@@ -65,6 +72,7 @@ function renderAllEmployees() {
 ajoutBtn.addEventListener('click', () => {
     ajouteForm.style.display = 'flex';
     ajouteForm.removeAttribute('data-edit-id');
+    if (photoPreviewContainer) photoPreviewContainer.style.display = 'flex';
 });
 
 annuler.addEventListener('click', () => {
@@ -84,6 +92,22 @@ searchBar.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase().trim();
     filterEmployees(searchTerm);
 });
+
+function updatePreviewFromUrl(url) {
+    if (!photoPreview) return;
+    if (url && urlRegex.test(url)) {
+        photoPreview.src = url;
+    } else {
+        photoPreview.src = '';
+    }
+}
+
+if (profileUrl) {
+    profileUrl.addEventListener('input', (e) => {
+        const url = e.target.value.trim();
+        updatePreviewFromUrl(url);
+    });
+}
 
 ajouteForm.addEventListener('submit', (e) => {
     e.preventDefault();

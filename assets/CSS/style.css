@@ -12,43 +12,24 @@
 
 .navigation {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    gap: 50em;
+    gap: 0;
+    padding: 0.5rem 1rem;
     box-shadow: 10px 10px 8px #888888;
 }
 
 .Logo {
     display: flex;
-    gap: 3em;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
 }
 
 .Logo img {
-    width: 140px;
-    height: 140px;
-}
-
-.header-buttons {
-    display: flex;
-    gap: 1em;
-}
-
-.header-buttons button {
-    width: 8em;
-    height: 2.5em;
-    border-radius: 20px;
-    border: none;
-    font-size: 17px;
-}
-
-#assign {
-    color: green;
-}
-
-#rénitialiser {
-    color: red;
+    width: 100px;
+    height: auto;
+    max-height: 100px;
 }
 
 .container {
@@ -187,32 +168,37 @@
 }
 
 #ajouteForm {
-    position: absolute;
+    position: fixed;
+    right: 2rem;
+    top: 6rem;
     display: none;
     flex-direction: column;
     gap: 1em;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
-    width: 30%;
-    height: 100vh;
+    width: 500px;
+    max-height: calc(100vh - 8rem);
+    height: auto;
     border-radius: 10px;
-    margin-left: 22em;
-    padding: 10px;
+    padding: 1rem;
     z-index: 1;
-    top: 10em;
     background-color: white;
     box-shadow: 5px 10px 18px #888888;
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
 #ajouteForm label {
     font-size: 14px;
 }
 
-#ajouteForm input {
-    width: 80%;
+#ajouteForm input,
+#ajouteForm select {
+    width: 100%;
     border: none;
     border-bottom: #888888 1px solid;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 #roles {
@@ -268,8 +254,9 @@
 
 .experience-items {
     width: 100%;
-    max-height: 100px;
-    overflow-y: auto;
+    max-height: 300px;
+    min-height: 180px;
+    overflow-y: scroll;
     border: 1px solid #f2f2f2;
     padding: 10px;
     border-radius: 5px;
@@ -278,16 +265,38 @@
 
 .experience {
     display: flex;
-    gap: 5px;
+    gap: 0.5rem;
     padding: 10px;
     border-radius: 5px;
+    flex-wrap: wrap;
 }
 
 .experience input {
-    flex: 1;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.experience .exp-entreprise {
+    flex: 1 1 100%;
+    min-width: 0;
+}
+
+.experience .exp-debut,
+.experience .exp-fin {
+    flex: 1 1 48%;
+    min-width: 0;
+}
+
+#photoPreviewContainer {
+    width: 100%;
+    justify-content: flex-start;
+}
+
+#photoPreviewContainer img#photoPreview {
+    margin-right: 0.5rem;
 }
 
 .experience-items::-webkit-scrollbar {
@@ -304,19 +313,39 @@
     border-radius: 5px;
 }
 
+#photoPreviewContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 80%;
+    margin: 0.5em 0 1em 0;
+}
+
+#photoPreviewContainer img#photoPreview {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: #f6f6f6;
+}
+
+
 .formBtns {
     display: flex;
-    justify-content: end;
-    align-items: end;
-    width: 90%;
-    height: 4em;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
     gap: 1em;
+    padding: 0.5rem 0;
+    box-sizing: border-box;
 }
 
 #ajouterEmp,
 #annuler {
-    height: 50%;
-    width: 6em;
+    padding: 0.5rem 1rem;
+    min-width: 6em;
     border: none;
     border-radius: 10px;
     color: white;
