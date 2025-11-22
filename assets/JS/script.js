@@ -30,10 +30,6 @@ function resetAjouteForm() {
     experienceItems.innerHTML = '';
     ajouteForm.removeAttribute('data-edit-id');
     ajouterEmp.textContent = 'Ajouter';
-    // reset preview to placeholder (if present)
-    if (photoPreview) {
-        photoPreview.src = '';
-    }
 }
 
 function saveEmployeesToStorage() {
@@ -46,11 +42,11 @@ function saveEmployeesToStorage() {
 
 function loadEmployeesFromStorage() {
     try {
-        const raw = localStorage.getItem('employeesData');
-        return raw ? JSON.parse(raw) : [];
+        const loadedData = localStorage.getItem('employeesData');
+        return loadedData ? JSON.parse(loadedData) : [];
     } catch (e) {
         console.warn('Failed to load employees from localStorage', e);
-        return [];
+        return;
     }
 }
 
@@ -97,8 +93,6 @@ function updatePreviewFromUrl(url) {
     if (!photoPreview) return;
     if (url && urlRegex.test(url)) {
         photoPreview.src = url;
-    } else {
-        photoPreview.src = '';
     }
 }
 
@@ -209,10 +203,14 @@ function renderEmployees(employeData) {
     const i = document.createElement('i');
     i.className = 'fa fa-gear';
 
-    Btn.addEventListener('click', () => {
+    Btn.addEventListener('click', (e) => {
+        e.stopPropagation();
         modifyEmployee(employeData.id);
     });
 
+    div.addEventListener('click', () => {
+        showEmployeeDetails(employeData.id);
+    });
     employees.appendChild(div);
     div.appendChild(span1);
     div.appendChild(span2);
@@ -224,6 +222,89 @@ function renderEmployees(employeData) {
     span2.appendChild(Btn);
 
     Btn.appendChild(i);
+}
+
+function showEmployeeDetails(employeeId) {
+    const employee = employeesData.find(emp => emp.id === employeeId);
+    if (!employee) return;
+
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.id = 'employeeDetailsModal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', `Détails de ${employee.Name}`);
+
+    const content = document.createElement('div');
+    content.className = 'modal-content details-content';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'close-modal';
+    closeBtn.textContent = '✕';
+    closeBtn.setAttribute('aria-label', 'Fermer');
+    closeBtn.addEventListener('click', () => {
+        modal.remove();
+    });
+
+    const header = document.createElement('div');
+    header.className = 'details-header';
+
+    const img = document.createElement('img');
+    img.src = employee.profileUrl || '';
+    img.alt = employee.Name;
+    img.className = 'details-photo';
+
+    const nameEl = document.createElement('h3');
+    nameEl.textContent = employee.Name;
+
+    const roleEl = document.createElement('p');
+    roleEl.textContent = employee.role;
+    roleEl.style.opacity = 0.8;
+
+    header.appendChild(img);
+    const headerText = document.createElement('div');
+    headerText.appendChild(nameEl);
+    headerText.appendChild(roleEl);
+    header.appendChild(headerText);
+
+    const contact = document.createElement('div');
+    contact.className = 'details-contact';
+    const emailEl = document.createElement('p');
+    emailEl.innerHTML = `<strong>Email:</strong> ${employee.email || '-'}`;
+    const phoneEl = document.createElement('p');
+    phoneEl.innerHTML = `<strong>Téléphone:</strong> ${employee.phone || '-'}`;
+    contact.appendChild(emailEl);
+    contact.appendChild(phoneEl);
+
+    const expSection = document.createElement('div');
+    expSection.className = 'details-experience';
+    const expTitle = document.createElement('h4');
+    expTitle.textContent = 'Expériences Professionnelles';
+    expSection.appendChild(expTitle);
+
+    if (employee.experience && employee.experience.length) {
+        const ul = document.createElement('ul');
+        employee.experience.forEach(exp => {
+            const li = document.createElement('li');
+            li.textContent = `${exp.entreprise} (${exp.dateDebut} → ${exp.dateFin})`;
+            ul.appendChild(li);
+        });
+        expSection.appendChild(ul);
+    } else {
+        const none = document.createElement('p');
+        none.textContent = 'Aucune expérience enregistrée.';
+        expSection.appendChild(none);
+    }
+
+    content.appendChild(closeBtn);
+    content.appendChild(header);
+    content.appendChild(contact);
+    content.appendChild(expSection);
+
+    modal.appendChild(content);
+    document.body.appendChild(modal);
+
+    modal.style.display = 'flex';
 }
 
 function modifyEmployee(employeeId) {
