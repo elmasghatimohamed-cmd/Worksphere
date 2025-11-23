@@ -15,7 +15,6 @@ const email = document.getElementById('email');
 const phone = document.getElementById('phone');
 const photoPreview = document.getElementById('photoPreview');
 const photoPreviewContainer = document.getElementById('photoPreviewContainer');
-const randomUserBtn = document.getElementById('randomUserBtn');
 
 const nameRegex = /^[a-zA-ZÀ-ÿ\s]{2,50}$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -46,7 +45,7 @@ function loadEmployeesFromStorage() {
         return loadedData ? JSON.parse(loadedData) : [];
     } catch (e) {
         console.warn('Failed to load employees from localStorage', e);
-        return;
+        return [];
     }
 }
 
@@ -241,7 +240,6 @@ function showEmployeeDetails(employeeId) {
     const closeBtn = document.createElement('button');
     closeBtn.className = 'close-modal';
     closeBtn.textContent = '✕';
-    closeBtn.setAttribute('aria-label', 'Fermer');
     closeBtn.addEventListener('click', () => {
         modal.remove();
     });
