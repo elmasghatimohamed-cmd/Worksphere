@@ -489,17 +489,15 @@ function selectRoom() {
 
                 let correctRole = false;
                 if (roomId === 'securityRoom') {
-                    correctRole = emp.role === 'Agent de sécurité';
+                    correctRole = emp.role === 'Agent de sécurité' || emp.role === 'Manager';
                 } else if (roomId === 'receptionRoom') {
-                    correctRole = emp.role === 'Réceptionniste';
+                    correctRole = emp.role === 'Réceptionniste' || emp.role === 'Manager';
                 } else if (roomId === 'archiveRoom') {
                     correctRole = emp.role !== 'Nettoyage';
-                } else if (roomId === 'conferenceRoom') {
-                    correctRole = emp.role !== 'Agent de sécurité';
                 } else if (roomId === 'serversRoom') {
-                    correctRole = emp.role === 'Technicien IT';
-                } else {
-                    correctRole = true;
+                    correctRole = emp.role === 'Technicien IT' || emp.role === 'Manager';
+                } else if (roomId !== 'securityRoom' && roomId !== 'receptionRoom' && roomId !== 'serversRoom') {
+                    correctRole = emp.role === 'Autres roles';
                 }
 
                 return isAvailable && correctRole;
