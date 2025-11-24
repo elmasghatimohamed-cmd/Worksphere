@@ -498,6 +498,8 @@ function selectRoom() {
                     correctRole = emp.role === 'Technicien IT' || emp.role === 'Manager';
                 } else if (roomId !== 'securityRoom' && roomId !== 'receptionRoom' && roomId !== 'serversRoom') {
                     correctRole = emp.role === 'Autres roles';
+                } else if (roomId === conferenceRoom || roomId === personnelsRoom) {
+                    correctRole = emp.role === 'Manager' || emp.role === 'Nettoyage' || emp.role === 'Agent de sécurité' || emp.role === 'Réceptionniste' || emp.role === 'Technicien IT'
                 }
 
                 return isAvailable && correctRole;
